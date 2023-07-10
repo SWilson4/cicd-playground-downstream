@@ -5,6 +5,7 @@ on:
     branches: [ "**" ]
   pull_request:
     branches: [ "**" ]
+  repository_dispatch: # to be triggered by upstream repo
 
 permissions:
   contents: read
