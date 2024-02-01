@@ -1,3 +1,7 @@
 #/bin/bash
 
-git branch --show-current && cd cicd-playground-upstream && git branch --show-current
+pwd
+git branch --show-current
+ls
+cd cicd-playground-upstream
+git branch --show-current
