@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Check if tracker branch exists
-        run:
+        run: |
           curl --silent \
                --write-out "\n%{response_code}\n" \
                --request POST \
