@@ -24,9 +24,9 @@ jobs:
             && grep -q "200" curl_out \
             && echo "target_branch=$tracker_branch" >> "$GITHUB_ENV" \
             || echo "target_branch=main" >> "$GITHUB_ENV"
-      - name: Checkout tracker branch
+      - name: Checkout tracker branch if it exists, otherwise fall back to main
         uses: actions/checkout@v4
         with:
-          ref: $tracker_branch
+          ref: ${{ env.target_branch }}
       - name: Run tests
         run: ./release-test.sh
