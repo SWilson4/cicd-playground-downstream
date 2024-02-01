@@ -48,11 +48,11 @@ jobs:
         with:
           ref: ${{ env.provider_ref }}
       # This is designed to be triggered automatically from liboqs CI, so don't bother validating the liboqs ref.
-      - name: Checkout liboqs at requested ref
+      - name: Checkout cicd-playground-upstream at requested ref
         uses: actions/checkout@v4
         with:
           repository: swilson4/cicd-playground-upstream
-          path: liboqs
+          path: cicd-playground-upstream
           ref: ${{ github.event.client_payload.liboqs_ref }}
       - name: Run release tests
         run: ./scripts/release-test-ci.sh
