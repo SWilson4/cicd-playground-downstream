@@ -1,0 +1,17 @@
+name: GitHub actions
+
+on:
+  repository_dispatch: # to be triggered by upstream repo
+    types: [ "liboqs-release" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.client_payload.tag}}-tracker
+      - name: Run tests
+        run: ./release-test.sh
