@@ -24,8 +24,8 @@ on:
 jobs:
   release-test:
     runs-on: ubuntu-latest
-    container:
-      image: openquantumsafe/ci-ubuntu-jammy:latest
+      #container:
+      #image: openquantumsafe/ci-ubuntu-jammy:latest
 
     steps:
       - name: Check if requested ref exists
