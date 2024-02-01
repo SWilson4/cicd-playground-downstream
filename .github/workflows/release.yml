@@ -11,21 +11,19 @@ on:
 #      --header "Authorization: Bearer YOUR_TOKEN_HERE" \
 #      --header "X-GitHub-Api-Version: 2022-11-28" \
 #      --data '{
-#                "event_type": "liboqs-release", \
-#                "client_payload": { \
-#                                    "provider_ref": "PROVIDER_BRANCH_OR_TAG_NAME_HERE", \
-#                                    "liboqs_ref": "LIBOQS_BRANCH_OR_TAG_NAME_HERE" \
-#                                  } \
+#                "event_type": "liboqs-release",
+#                "client_payload": {
+#                                    "provider_ref": "PROVIDER_BRANCH_OR_TAG_HERE",
+#                                    "liboqs_ref": "LIBOQS_BRANCH_OR_TAG_HERE"
+#                                  }
 #              }' \
 #      https://api.github.com/repos/swilson4/cicd-playground-downstream/dispatches
-#
-# If you wish to target a tag instead of a branch, use "tags/TAG_NAME_HERE" instead of "heads/BRANCH_NAME_HERE".
 
 jobs:
   release-test:
     runs-on: ubuntu-latest
-      #container:
-      #image: openquantumsafe/ci-ubuntu-jammy:latest
+    container:
+      image: openquantumsafe/ci-ubuntu-jammy:latest
 
     steps:
       - name: Check if requested ref exists
