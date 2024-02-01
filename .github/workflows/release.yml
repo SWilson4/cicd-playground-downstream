@@ -27,6 +27,6 @@ jobs:
       - name: Checkout tracker branch
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.client_payload.tag }}-tracker
+          ref: $tracker_branch
       - name: Run tests
         run: ./release-test.sh
