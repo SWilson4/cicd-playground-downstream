@@ -1,7 +1,7 @@
 #/bin/bash
 
 pwd
-git branch --show-current
+git status
 ls
 cd cicd-playground-upstream
-git branch --show-current
+git status
