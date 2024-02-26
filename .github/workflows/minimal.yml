@@ -9,5 +9,5 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Success
-        run: ./success.sh
+      - name: Failure
+        run: ./failure.sh
