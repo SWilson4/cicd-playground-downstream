@@ -1,0 +1,11 @@
+name: Minimal tests
+
+on: [push, pull_request]
+
+jobs:
+  stylecheck:
+    name: Minimal test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Success
+        run: ./success.sh

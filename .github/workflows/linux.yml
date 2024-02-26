@@ -1,0 +1,20 @@
+name: Linux tests
+
+on:
+  # Only run after the minimal (Linux) tests complete. This workflow will run on the default branch,
+  # so we have to specify the branch to checkout below based on the workflow_run context.
+  workflow_run:
+    workflows: ["Minimal tests"]
+    types: [completed]
+
+jobs:
+  linux:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }} # only run if minimal tests succeed
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
+      - name: Echo branch name
+        run: git branch
